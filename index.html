@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skypiers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            border-bottom: 5px solid #005a9e;
+            animation: headerSlide 0.5s ease-in-out;
+        }
+
+        @keyframes headerSlide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav button {
+            margin: 5px;
+            padding: 15px 25px;
+            background-color: #ffffff;
+            color: #1a73e8;
+            border: 2px solid #1a73e8;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav button:hover {
+            background-color: #1a73e8;
+            color: white;
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+            transform: translateY(20px);
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            animation: slideIn 1s forwards;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            font-size: 1.1em;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        li:hover {
+            color: #1a73e8;
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Skypiers</h1>
+        <nav>
+            <button onclick="showSection('students')">Students</button>
+            <button onclick="showSection('classOfficers')">Class Officers</button>
+            <button onclick="showSection('about')">About</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="students" class="hidden">
+            <h2>Students</h2>
+            <p>Here are some details about the students in our class.</p>
+        </section>
+
+        <section id="classOfficers" class="hidden">
+            <h2>Class Officers</h2>
+            <ul>
+                <li><a href="https://www.facebook.com/bryancasimiro18" target="_blank">President: Bryan Riley R. Casimiro</a></li>
+                <li><a href="https://www.facebook.com/sassybyatch" target="_blank">Vice President: Dean Trixy Viernes</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100094429666251" target="_blank">Secretary: Rob Thomas Hernandez</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100091606216789" target="_blank">Treasurer: Veronica Vanzuela</a></li>
+                <li><a href="https://www.facebook.com/jhayce.delosreyes" target="_blank">Auditor: Jhayce Dizon</a></li>
+                <li><a href="https://www.facebook.com/crisember.sangabriel.1" target="_blank">Peace Officer: Cris Ember San Gabriel</a></li>
+                <li><a href="https://www.facebook.com/christian.nishihama.7" target="_blank">Peace Officer: Christian Nishihama</a></li>
+                <li><a href="https://www.facebook.com/raine.pagsanjan" target="_blank">P.I.O: Raine Pagsanjan</a></li>
+                <li><a href="https://www.facebook.com/nicoleleuterio.101" target="_blank">Muse: Althea Nicole Leuterio</a></li>
+                <li><a href="https://www.facebook.com/kaitooo12" target="_blank">Escort: Kaito Arceo</a></li>
+            </ul>
+        </section>
+
+        <section id="about" class="hidden">
+            <h2>About</h2>
+            <p>We are ICT students, passionate about technology and innovation.</p>
+            <p>As future system makers, we strive to create solutions that enhance our world.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 11 ICT-SKYPE. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                section.classList.add('hidden');
+            });
+
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.remove('hidden');
+            setTimeout(() => {
+                selectedSection.classList.add('active');
+            }, 10);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('students');
+        });
+    </script>
+</body>
+</html>
